@@ -1,0 +1,94 @@
+<section class="bracket-setup screen-section" aria-labelledby="bracket-setup-title">
+    <header class="screen-heading">
+        <div class="screen-heading__content">
+            <span class="screen-heading__eyebrow">Step 2 of 4</span>
+            <h1 id="bracket-setup-title">Prepare the knockout bracket</h1>
+            <p class="screen-heading__description">Review the automatically generated matches, adjust pairings if
+                necessary, and set the first-round deadline.</p>
+        </div>
+
+        <span class="status-badge status-badge--info">Single elimination</span>
+    </header>
+
+    <div class="bracket-summary" aria-label="Bracket summary">
+        <article class="bracket-summary__item">
+            <span>Players</span>
+            <strong id="bracket-player-count">0</strong>
+        </article>
+
+        <article class="bracket-summary__item">
+            <span>Bracket size</span>
+            <strong id="bracket-size">—</strong>
+        </article>
+
+        <article class="bracket-summary__item">
+            <span>First-round matches</span>
+            <strong id="bracket-match-count">0</strong>
+        </article>
+
+        <article class="bracket-summary__item">
+            <span>Automatic byes</span>
+            <strong id="bracket-bye-count">0</strong>
+        </article>
+    </div>
+
+    <section class="panel bracket-settings" aria-labelledby="bracket-settings-title">
+        <header class="panel__header">
+            <div>
+                <span class="status-badge">Round settings</span>
+                <h2 id="bracket-settings-title">Pairing and deadline</h2>
+            </div>
+        </header>
+
+        <div class="panel__body bracket-settings__content">
+            <div class="field">
+                <label for="round-deadline">First-round deadline</label>
+                <input id="round-deadline" name="deadline" type="datetime-local" required>
+                <small class="field__hint">Players must complete their first match before this deadline.</small>
+                <small class="field__error" data-error-for="deadline"></small>
+            </div>
+
+            <label class="pairing-option" for="prioritize-cross-platform">
+                <input id="prioritize-cross-platform" type="checkbox" checked>
+                <span class="pairing-option__control" aria-hidden="true"></span>
+                <span class="pairing-option__content">
+                    <strong>Prioritize compatible platforms</strong>
+                    <small>Avoid pairings between players who cannot play together whenever possible.</small>
+                </span>
+            </label>
+
+            <button class="button button--secondary" id="regenerate-bracket" type="button">Regenerate bracket</button>
+        </div>
+    </section>
+
+    <section class="panel bracket-panel" aria-labelledby="matchups-title">
+        <header class="panel__header bracket-panel__header">
+            <div>
+                <span class="status-badge status-badge--ready">Automatic pairing</span>
+                <h2 id="matchups-title">First-round matchups</h2>
+                <p>Use the player selectors inside a match to adjust the automatic pairings.</p>
+            </div>
+
+            <button class="button button--secondary" id="open-bracket-preview" type="button">Screenshot view</button>
+        </header>
+
+        <div class="panel__body">
+            <div class="bracket-notice" id="bracket-notice" role="status" aria-live="polite">
+                Generating compatible knockout matchups…
+            </div>
+
+            <div class="bracket-matchups" id="bracket-matchups" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <footer class="screen-actions">
+        <button class="button button--secondary" id="back-to-players" type="button">Edit players</button>
+
+        <div class="screen-actions__primary">
+            <p id="bracket-setup-message" aria-live="polite">Set the deadline and review every matchup before starting.
+            </p>
+            <button class="button button--primary" id="start-tournament" type="button" disabled>Start
+                tournament</button>
+        </div>
+    </footer>
+</section>

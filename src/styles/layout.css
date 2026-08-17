@@ -1,0 +1,431 @@
+/*
+ * Main application shell
+ */
+
+.app-shell {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+ * Application header
+ */
+
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+
+    min-height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+
+    padding-right:
+        max(var(--space-6),
+            calc((100vw - var(--content-width)) / 2));
+
+    padding-left:
+        max(var(--space-6),
+            calc((100vw - var(--content-width)) / 2));
+
+    color: var(--color-text);
+    background: var(--color-surface-soft);
+
+    border-bottom: 1px solid var(--color-border);
+
+    box-shadow: var(--shadow-xs);
+}
+
+/*
+ * Brand
+ */
+
+.brand {
+    min-width: 0;
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+
+    flex-shrink: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.brand__logo {
+    display: block;
+    width: clamp(11rem, 18vw, 14rem);
+    height: auto;
+}
+
+.app-header {
+    color: var(--color-header-text);
+    background: var(--color-header-background);
+    border-bottom-color: var(--color-header-border);
+}
+
+@media (max-width: 40rem) {
+    .brand__logo {
+        width: 10rem;
+    }
+}
+
+.brand__mark {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--color-text-inverse);
+    background: var(--color-accent);
+
+    border: 1px solid var(--color-accent-border);
+    border-radius: var(--radius-md);
+
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-extra-bold);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.brand__text {
+    min-width: 0;
+
+    display: grid;
+    gap: var(--space-1);
+
+    line-height: 1;
+}
+
+.brand__text strong {
+    overflow: hidden;
+
+    color: var(--color-text);
+
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-extra-bold);
+
+    letter-spacing: -0.03em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.brand__text span {
+    overflow: hidden;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+
+    letter-spacing: 0.08em;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/*
+ * Header actions
+ *
+ * This wrapper will contain the autosave status
+ * and theme button later.
+ */
+
+.app-header__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+}
+
+/*
+ * Autosave status
+ */
+
+.autosave-status {
+    min-height: 2rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    color: var(--color-text-soft);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+
+    white-space: nowrap;
+}
+
+.autosave-status__indicator {
+    width: 0.5rem;
+    height: 0.5rem;
+
+    flex-shrink: 0;
+
+    background: var(--color-success);
+
+    border-radius: var(--radius-full);
+
+    box-shadow: 0 0 0 0.25rem var(--color-success-soft);
+}
+
+/*
+ * Tournament workflow progress
+ */
+
+.workflow-progress {
+    position: relative;
+    z-index: 1;
+
+    padding: var(--space-5) max(var(--space-6),
+            calc((100vw - var(--content-width)) / 2));
+
+    background: var(--color-surface);
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.workflow-progress__steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.workflow-progress__step {
+    position: relative;
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+/*
+ * Line connecting workflow steps
+ */
+
+.workflow-progress__step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: var(--space-4);
+    left: 3rem;
+
+    height: 1px;
+
+    background: var(--color-border);
+
+    transform: translateY(-50%);
+}
+
+/*
+ * Workflow number
+ */
+
+.workflow-progress__marker {
+    position: relative;
+    z-index: 1;
+
+    width: 2rem;
+    height: 2rem;
+
+    flex: 0 0 2rem;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-full);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+}
+
+/*
+ * Workflow label
+ */
+
+.workflow-progress__label {
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+
+    padding-right: var(--space-3);
+
+    background: var(--color-surface);
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*
+ * Active workflow step
+ */
+
+.workflow-progress__step.is-active {
+    color: var(--color-text);
+}
+
+.workflow-progress__step.is-active .workflow-progress__marker {
+    color: var(--color-text-inverse);
+    background: var(--color-accent);
+
+    border-color: var(--color-accent-border);
+
+    box-shadow: var(--shadow-focus);
+}
+
+/*
+ * Completed workflow step
+ */
+
+.workflow-progress__step.is-complete {
+    color: var(--color-success);
+}
+
+.workflow-progress__step.is-complete .workflow-progress__marker {
+    color: var(--color-success);
+    background: var(--color-success-soft);
+
+    border-color: var(--color-success-border);
+}
+
+.workflow-progress__step.is-complete::after {
+    background: var(--color-success-border);
+}
+
+/*
+ * Main workflow content
+ */
+
+.workflow-main {
+    width: 100%;
+    max-width: calc(var(--content-width) + (var(--space-6) * 2));
+
+    min-height: calc(100vh - var(--header-height) - 4.5rem);
+
+    flex: 1;
+
+    margin: 0 auto;
+
+    padding: var(--space-10) var(--space-6) var(--space-16);
+}
+
+/*
+ * Individual workflow screen
+ */
+
+.screen-section {
+    width: 100%;
+
+    animation:workflow-screen-enter var(--transition-normal);
+}
+
+@keyframes workflow-screen-enter {
+    from {
+        opacity: 0;
+        transform: translateY(0.375rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Loading state
+ */
+
+.screen-loader {
+    min-height: 24rem;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+/*
+ * Global fatal-error layout
+ */
+
+.fatal-error {
+    min-height: 24rem;
+
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: var(--space-3);
+
+    padding: var(--space-8);
+
+    color: var(--color-text-soft);
+
+    text-align: center;
+}
+
+.fatal-error h1 {
+    max-width: 38rem;
+
+    color: var(--color-text);
+
+    font-size: var(--font-size-2xl);
+}
+
+.fatal-error p {
+    max-width: 34rem;
+
+    color: var(--color-text-soft);
+
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+}
+
+/*
+ * Notification position
+ */
+
+.notification-region {
+    position: fixed;
+    right: var(--space-6);
+    bottom: var(--space-6);
+    z-index: var(--z-notification);
+
+    width:
+        min(22rem,
+            calc(100% - var(--space-8)));
+
+    display: grid;
+    gap: var(--space-3);
+
+    pointer-events: none;
+}

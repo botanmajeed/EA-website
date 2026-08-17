@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09140f">
+
+    <meta name="description" content="EAKurd knockout tournament manager.">
+
+    <title>EAKurd Knockout Manager</title>
+
+    <link rel="icon" type="image/png" href="./assets/icons/eakurd-icon.png">
+    <link rel="apple-touch-icon" href="./assets/icons/eakurd-icon.png">
+
+    <link rel="stylesheet" href="./src/styles/main.css">
+
+    <script type="module" src="./src/app.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#workflow-screen">
+        Skip to tournament setup
+    </a>
+
+    <div class="app-shell" id="app-shell">
+        <header class="app-header">
+            <div class="brand" aria-label="EAKurd Knockout Manager">
+                <img class="brand__logo brand__logo--dark" src="./assets/images/eakurd-logo-dark.png"
+                    alt="EAKurd Knockout Manager">
+            </div>
+
+            <div class="app-header__actions">
+                <div class="autosave-status" id="autosave-status" role="status" aria-live="polite">
+                    <span class="autosave-status__indicator" aria-hidden="true"></span>
+                    <span id="autosave-status-text">Saved on this device</span>
+                </div>
+
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+                    <span class="theme-toggle__icon" data-theme-icon aria-hidden="true">☀</span>
+                    <span data-theme-label>Light mode</span>
+                </button>
+            </div>
+        </header>
+
+        <nav class="workflow-progress" aria-label="Tournament progress">
+            <ol class="workflow-progress__steps" id="workflow-progress"></ol>
+        </nav>
+
+        <main class="workflow-main" id="workflow-screen" tabindex="-1">
+            <div class="screen-loader" role="status">
+                Preparing tournament…
+            </div>
+        </main>
+
+        <div class="notification-region" id="notification-region" aria-live="polite" aria-atomic="true"></div>
+    </div>
+
+    <noscript>
+        This tournament manager requires JavaScript.
+    </noscript>
+</body>
+
+</html>

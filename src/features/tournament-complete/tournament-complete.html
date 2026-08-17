@@ -1,0 +1,128 @@
+<section class="tournament-complete screen-section" aria-labelledby="tournament-complete-title">
+    <header class="completion-hero">
+        <div class="completion-hero__content">
+            <span class="completion-hero__eyebrow">Tournament complete</span>
+            <h1 id="tournament-complete-title">We have a champion</h1>
+            <p>The knockout tournament has finished and the complete admin report is ready.</p>
+        </div>
+
+        <div class="champion-trophy" aria-hidden="true">★</div>
+    </header>
+
+    <section class="champion-card" aria-labelledby="champion-name">
+        <div class="champion-card__crown" aria-hidden="true">Champion</div>
+
+        <div class="champion-card__avatar" id="champion-avatar" aria-hidden="true">C</div>
+
+        <div class="champion-card__identity">
+            <span>Tournament winner</span>
+            <h2 id="champion-name">—</h2>
+
+            <div class="champion-card__details">
+                <span id="champion-player-id">Player ID: —</span>
+                <span id="champion-telegram-id">Telegram: —</span>
+                <span class="platform-badge" id="champion-console">—</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="completion-summary" aria-label="Tournament summary">
+        <article class="completion-summary__item">
+            <span>Players</span>
+            <strong id="completed-player-count">0</strong>
+        </article>
+
+        <article class="completion-summary__item">
+            <span>Stages</span>
+            <strong id="completed-round-count">0</strong>
+        </article>
+
+        <article class="completion-summary__item">
+            <span>Matches played</span>
+            <strong id="completed-match-count">0</strong>
+        </article>
+
+        <article class="completion-summary__item">
+            <span>Tournament duration</span>
+            <strong id="tournament-duration">—</strong>
+        </article>
+    </div>
+
+    <section class="panel stage-archive-panel" aria-labelledby="stage-archive-title">
+        <header class="panel__header stage-archive-panel__header">
+            <div>
+                <span class="status-badge status-badge--ready">Screenshot archive</span>
+                <h2 id="stage-archive-title">Tournament stages</h2>
+                <p>Select any stage to view a clean, screenshot-ready bracket.</p>
+            </div>
+
+            <div class="stage-archive-panel__controls">
+                <label class="sr-only" for="stage-selector">Select tournament stage</label>
+                <select id="stage-selector"></select>
+                <button class="button button--secondary" id="open-stage-preview" type="button">Screenshot view</button>
+            </div>
+        </header>
+
+        <div class="panel__body">
+            <div class="stage-bracket" id="stage-bracket" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <section class="panel tournament-results-panel" aria-labelledby="tournament-results-title">
+        <header class="panel__header">
+            <div>
+                <span class="status-badge">Complete history</span>
+                <h2 id="tournament-results-title">Match results</h2>
+                <p>Every matchup, score, winner, and automatic bye from the tournament.</p>
+            </div>
+        </header>
+
+        <div class="panel__body">
+            <div class="tournament-results" id="tournament-results"></div>
+        </div>
+    </section>
+
+    <section class="panel tournament-report-panel" aria-labelledby="tournament-report-title">
+        <header class="panel__header tournament-report-panel__header">
+            <div>
+                <span class="status-badge status-badge--ready">Admin report</span>
+                <h2 id="tournament-report-title">Tournament report</h2>
+                <p>Save, edit, copy, or share the complete tournament information.</p>
+            </div>
+
+            <div class="report-actions">
+                <button class="button button--secondary" id="copy-tournament-report" type="button">Copy text</button>
+                <button class="button button--secondary" id="download-txt-report" type="button">Download TXT</button>
+                <button class="button button--primary" id="download-csv-report" type="button">Download CSV</button>
+            </div>
+        </header>
+
+        <div class="panel__body">
+            <textarea class="tournament-report-preview" id="tournament-report-preview"
+                aria-label="Tournament report text" spellcheck="false"></textarea>
+        </div>
+    </section>
+
+    <section class="panel event-history-panel" aria-labelledby="event-history-title">
+        <header class="panel__header">
+            <div>
+                <span class="status-badge">Activity log</span>
+                <h2 id="event-history-title">Notable events</h2>
+                <p>Important actions recorded throughout the tournament.</p>
+            </div>
+        </header>
+
+        <div class="panel__body">
+            <ol class="event-history" id="event-history"></ol>
+        </div>
+    </section>
+
+    <footer class="screen-actions completion-actions">
+        <div>
+            <strong>Tournament data is saved on this device.</strong>
+            <p>Export the report before creating another tournament.</p>
+        </div>
+
+        <button class="button button--danger" id="start-new-tournament" type="button">Create new tournament</button>
+    </footer>
+</section>

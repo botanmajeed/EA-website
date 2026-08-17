@@ -1,0 +1,285 @@
+:root {
+    --font-body: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-heading: "Arial Black", Inter, "Segoe UI", sans-serif;
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+
+    --space-xs: var(--space-1);
+    --space-sm: var(--space-2);
+    --space-md: var(--space-4);
+    --space-lg: var(--space-6);
+    --space-xl: var(--space-8);
+
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 999px;
+
+    --header-height: 5rem;
+    --content-width: 76rem;
+
+    --transition-fast: 140ms ease;
+    --transition-normal: 220ms ease;
+    --transition-slow: 340ms ease;
+
+    --z-base: 1;
+    --z-sticky: 20;
+    --z-notification: 50;
+    --z-modal: 100;
+}
+
+:root,
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --color-page: #0b1118;
+    --color-page-alt: #0f1821;
+    --color-background: var(--color-page);
+
+    --color-surface: #141f2b;
+    --color-surface-soft: #192735;
+    --color-surface-raised: #203142;
+    --color-surface-elevated: #26394b;
+    --color-surface-translucent: rgba(20, 31, 43, 0.9);
+
+    --color-header-background: #09131b;
+    --color-header-text: #f4f8fa;
+    --color-header-border: #253645;
+
+    --color-text: #f2f6f8;
+    --color-text-soft: #b7c4cc;
+    --color-text-muted: #8a9aa7;
+    --color-text-disabled: #637481;
+    --color-text-inverse: #081813;
+
+    --color-accent: #68d7c1;
+    --color-accent-hover: #82e2ce;
+    --color-accent-strong: #36bfa4;
+    --color-accent-soft: rgba(104, 215, 193, 0.14);
+    --color-accent-border: rgba(104, 215, 193, 0.38);
+    --color-accent-text: #071a16;
+
+    --color-secondary: #a994f4;
+    --color-secondary-soft: rgba(169, 148, 244, 0.14);
+
+    --color-success: #63d38e;
+    --color-success-hover: #7cdda0;
+    --color-success-soft: rgba(99, 211, 142, 0.14);
+    --color-success-border: rgba(99, 211, 142, 0.38);
+    --color-on-success: #07170e;
+
+    --color-warning: #f2be5c;
+    --color-warning-hover: #f6cb76;
+    --color-warning-soft: rgba(242, 190, 92, 0.15);
+    --color-warning-border: rgba(242, 190, 92, 0.4);
+    --color-on-warning: #201604;
+
+    --color-danger: #f27380;
+    --color-danger-hover: #f58d97;
+    --color-danger-soft: rgba(242, 115, 128, 0.14);
+    --color-danger-border: rgba(242, 115, 128, 0.38);
+    --color-on-danger: #21070a;
+
+    --color-info: #6ea9ff;
+    --color-info-hover: #88b9ff;
+    --color-info-soft: rgba(110, 169, 255, 0.14);
+    --color-info-border: rgba(110, 169, 255, 0.38);
+    --color-on-info: #071326;
+
+    --color-border: #293a4a;
+    --color-border-strong: #3b5062;
+    --color-border-subtle: #202f3d;
+
+    --color-input-background: #111b25;
+    --color-input-border: #34485a;
+    --color-input-placeholder: #718291;
+    --color-input-disabled: #182430;
+
+    --color-button-disabled: #25323e;
+    --color-button-disabled-text: #71808c;
+
+    --color-overlay: rgba(4, 9, 13, 0.76);
+    --color-focus-ring: rgba(104, 215, 193, 0.32);
+    --color-selection: rgba(104, 215, 193, 0.28);
+
+    --color-platform-playstation: #76a7ff;
+    --color-platform-xbox: #74d17b;
+    --color-platform-pc: #b39af8;
+    --color-platform-telegram: #62bde8;
+
+    --shadow-sm: 0 8px 22px rgba(0, 0, 0, 0.18);
+    --shadow-md: 0 18px 46px rgba(0, 0, 0, 0.26);
+    --shadow-lg: 0 30px 75px rgba(0, 0, 0, 0.34);
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+
+    --color-page: #f4f7f8;
+    --color-page-alt: #eaf0f2;
+    --color-background: var(--color-page);
+
+    --color-surface: #ffffff;
+    --color-surface-soft: #edf3f4;
+    --color-surface-raised: #f9fbfc;
+    --color-surface-elevated: #ffffff;
+    --color-surface-translucent: rgba(255, 255, 255, 0.9);
+
+    --color-header-background: #12222b;
+    --color-header-text: #f6fafb;
+    --color-header-border: #2a3c47;
+
+    --color-text: #17242b;
+    --color-text-soft: #50616b;
+    --color-text-muted: #71818b;
+    --color-text-disabled: #99a6ad;
+    --color-text-inverse: #f7fbfa;
+
+    --color-accent: #0b7868;
+    --color-accent-hover: #086555;
+    --color-accent-strong: #064f44;
+    --color-accent-soft: #d9f2ec;
+    --color-accent-border: #91d5c7;
+    --color-accent-text: #ffffff;
+
+    --color-secondary: #7055b5;
+    --color-secondary-soft: #eee9fa;
+
+    --color-success: #197a48;
+    --color-success-hover: #12663b;
+    --color-success-soft: #dcf3e5;
+    --color-success-border: #98d3af;
+    --color-on-success: #ffffff;
+
+    --color-warning: #9b640c;
+    --color-warning-hover: #805107;
+    --color-warning-soft: #fff0cd;
+    --color-warning-border: #e7c26f;
+    --color-on-warning: #ffffff;
+
+    --color-danger: #bb3f50;
+    --color-danger-hover: #9e3040;
+    --color-danger-soft: #fce4e8;
+    --color-danger-border: #e4a1ab;
+    --color-on-danger: #ffffff;
+
+    --color-info: #2f67b1;
+    --color-info-hover: #255694;
+    --color-info-soft: #e1ecfa;
+    --color-info-border: #9bbce5;
+    --color-on-info: #ffffff;
+
+    --color-border: #d6e0e5;
+    --color--color-border-strong: #b9c8d0;
+    --color-border-subtle: #e5ecef;
+
+    --color-input-background: #ffffff;
+    --color-input-border: #bdcbd2;
+    --color-input-placeholder: #80909a;
+    --color-input-disabled: #edf1f3;
+
+    --color-button-disabled: #dfe6e9;
+    --color-button-disabled-text: #7c898f;
+
+    --color-overlay: rgba(7, 15, 20, 0.66);
+    --color-focus-ring: rgba(11, 120, 104, 0.25);
+    --color-selection: rgba(11, 120, 104, 0.2);
+
+    --color-platform-playstation: #2968d7;
+    --color-platform-xbox: #2e7d32;
+    --color-platform-pc: #7251b5;
+    --color-platform-telegram: #167ca9;
+
+    --shadow-sm: 0 8px 22px rgba(23, 36, 43, 0.07);
+    --shadow-md: 0 18px 46px rgba(23, 36, 43, 0.11);
+    --shadow-lg: 0 30px 75px rgba(23, 36, 43, 0.16);
+}
+
+/* Compatibility aliases used by older project styles. */
+:root {
+    --page: var(--color-page);
+    --surface: var(--color-surface);
+    --surface-soft: var(--color-surface-soft);
+    --surface-dark: var(--color-header-background);
+    --surface-dark-soft: var(--color-header-background);
+
+    --text: var(--color-text);
+    --text-soft: var(--color-text-soft);
+    --text-muted: var(--color-text-muted);
+    --text-inverse: var(--color-header-text);
+
+    --accent: var(--color-accent);
+    --accent-hover: var(--color-accent-hover);
+    --accent-strong: var(--color-accent-strong);
+    --accent-soft: var(--color-accent-soft);
+    --accent-ink: var(--color-accent-text);
+
+    --success: var(--color-success);
+    --success-soft: var(--color-success-soft);
+    --warning: var(--color-warning);
+    --warning-soft: var(--color-warning-soft);
+    --danger: var(--color-danger);
+    --danger-soft: var(--color-danger-soft);
+    --info: var(--color-info);
+    --info-soft: var(--color-info-soft);
+
+    --border: var(--color-border);
+    --border-strong: var(--color-border-strong);
+    --border-dark: var(--color-header-border);
+
+    --input-background: var(--color-input-background);
+    --input-border: var(--color-input-border);
+    --input-placeholder: var(--color-input-placeholder);
+
+    --focus: 0 0 0 3px var(--color-focus-ring);
+}
+
+/* Spacing */
+:root {
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.75rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* Border radius */
+    --radius-xs: 0.25rem;
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Component sizes */
+    --header-height: 5rem;
+    --button-height: 2.75rem;
+    --input-height: 2.875rem;
+    --content-width: 76rem;
+
+    /* Transitions */
+    --transition-fast: 120ms ease;
+    --transition-normal: 200ms ease;
+    --transition-slow: 300ms ease;
+
+    /* Layer order */
+    --z-header: 20;
+    --z-overlay: 40;
+    --z-dialog: 50;
+    --z-notification: 60;
+}

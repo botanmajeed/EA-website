@@ -1,0 +1,8 @@
+@import url("./variables.css");
+@import url("./reset.css");
+@import url("./layout.css");
+@import url("./components.css");
+@import url("../features/player-setup/player-setup.css");
+@import url("../features/bracket-setup/bracket-setup.css");
+@import url("../features/active-round/active-round.css");
+@import url("../features/tournament-complete/tournament-complete.css");

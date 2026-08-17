@@ -1,0 +1,120 @@
+<section class="active-round screen-section" aria-labelledby="active-round-title">
+    <header class="screen-heading">
+        <div class="screen-heading__content">
+            <span class="screen-heading__eyebrow">Step 3 of 4</span>
+            <h1 id="active-round-title">Tournament in progress</h1>
+            <p class="screen-heading__description" id="active-round-description">Enter each match result to advance the
+                winners automatically.</p>
+        </div>
+
+        <span class="status-badge status-badge--live">Round active</span>
+    </header>
+
+    <div class="round-summary" aria-label="Current round summary">
+        <article class="round-summary__item">
+            <span>Current stage</span>
+            <strong id="current-round-name">—</strong>
+        </article>
+
+        <article class="round-summary__item">
+            <span>Total matches</span>
+            <strong id="current-round-match-count">0</strong>
+        </article>
+
+        <article class="round-summary__item">
+            <span>Completed</span>
+            <strong id="completed-match-count">0</strong>
+        </article>
+
+        <article class="round-summary__item round-summary__item--deadline">
+            <span>Time remaining</span>
+            <strong id="deadline-countdown">—</strong>
+        </article>
+    </div>
+
+    <section class="panel round-deadline-panel" aria-labelledby="round-deadline-title">
+        <header class="panel__header">
+            <div>
+                <span class="status-badge">Stage deadline</span>
+                <h2 id="round-deadline-title">Current round deadline</h2>
+            </div>
+
+            <span class="deadline-status" id="deadline-status">Not set</span>
+        </header>
+
+        <div class="panel__body">
+            <form class="round-deadline-form" id="round-deadline-form">
+                <div class="field">
+                    <label for="current-round-deadline">Deadline</label>
+                    <input id="current-round-deadline" name="deadline" type="datetime-local" required>
+                    <small class="field__hint">You can extend the deadline while this stage is active.</small>
+                    <small class="field__error" data-error-for="deadline"></small>
+                </div>
+
+                <button class="button button--secondary" type="submit">Update deadline</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="panel active-matches-panel" aria-labelledby="active-matches-title">
+        <header class="panel__header active-matches-panel__header">
+            <div>
+                <span class="status-badge status-badge--live">Live stage</span>
+                <h2 id="active-matches-title">Current matchups</h2>
+                <p>Enter both scores and confirm each completed match.</p>
+            </div>
+
+            <button class="button button--secondary" id="open-round-preview" type="button">Screenshot view</button>
+        </header>
+
+        <div class="panel__body">
+            <div class="round-progress" aria-label="Round completion progress">
+                <div class="round-progress__header">
+                    <span>Stage progress</span>
+                    <strong id="round-progress-label">0 of 0 completed</strong>
+                </div>
+
+                <div class="round-progress__track">
+                    <span id="round-progress-bar"></span>
+                </div>
+            </div>
+
+            <div class="round-notice" id="round-notice" role="status" aria-live="polite">Waiting for match results.
+            </div>
+            <div class="active-match-list" id="active-match-list" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <section class="panel next-round-panel" id="next-round-panel" aria-labelledby="next-round-title" hidden>
+        <header class="panel__header">
+            <div>
+                <span class="status-badge status-badge--ready">Stage complete</span>
+                <h2 id="next-round-title">Prepare the next stage</h2>
+                <p id="next-round-description">The winners have advanced automatically.</p>
+            </div>
+        </header>
+
+        <div class="panel__body next-round-panel__content">
+            <div class="next-round-preview">
+                <span>Next stage</span>
+                <strong id="next-round-name">—</strong>
+                <small id="next-round-match-count">0 matches</small>
+            </div>
+
+            <div class="field">
+                <label for="next-round-deadline">Next-stage deadline</label>
+                <input id="next-round-deadline" name="nextRoundDeadline" type="datetime-local" required>
+                <small class="field__hint">Set the deadline before starting the next stage.</small>
+                <small class="field__error" data-error-for="nextRoundDeadline"></small>
+            </div>
+
+            <button class="button button--primary" id="start-next-round" type="button" disabled>Start next
+                stage</button>
+        </div>
+    </section>
+
+    <footer class="screen-actions">
+        <p id="active-round-message" aria-live="polite">Complete every match to continue.</p>
+        <button class="button button--primary" id="finish-tournament" type="button" hidden>Finish tournament</button>
+    </footer>
+</section>
